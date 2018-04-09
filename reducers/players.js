@@ -6,7 +6,7 @@ const initialState = [
     selected: false,
     playerName: 'Etienne',    
     photoSource: require('../assets/players/etienne.jpg'),
-    cards: cards.splice(0, 5)
+    cards: cards.splice(0, 10)
   },
   {
     playerId: 1,
@@ -34,12 +34,14 @@ const initialState = [
 const player = (state, action) => {
   switch (action.type) {
     case 'ADD_PLAYER':
-      return {
+      const a = {
         playerId: action.playerId,
         playerName: action.playerName,
         photoSource: action.photoSource,
         cards: []
       };
+      console.log(a)
+      return a;
     default:
       return state;
   }

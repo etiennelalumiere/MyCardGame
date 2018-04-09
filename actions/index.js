@@ -1,6 +1,6 @@
 //----------------------------------------------------------------
 // PLAYERS
-let nextPlayerId = 0;
+let nextPlayerId = 4;
 export const addPlayer = (playerName, photoSource) => ({
   type: 'ADD_PLAYER',
   playerId: nextPlayerId++,

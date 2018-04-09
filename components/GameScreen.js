@@ -13,76 +13,7 @@ import CardDeck from './CardDeck';
 import CardHand from './CardHand';
 import PlayersContainer from '../containers/PlayersContainer';
 import CardHandContainer from '../containers/CardHandContainer';
-
-const data = {
-  players: [
-    {
-      id: 0,
-      playerName: 'Etienne',
-      photoSource: require('../assets/players/etienne.jpg'),
-      cards: cards.splice(0, 5)
-    },
-    {
-      id: 1,
-      playerName: 'Alexis',
-      selected: true,
-      photoSource: require('../assets/players/alexis.jpg'),
-      cards: cards.splice(0, 5)
-    },
-    {
-      id: 2,
-      playerName: 'Simon',
-      photoSource: require('../assets/players/simon.jpg'),
-      cards: cards.splice(0, 5)
-    },
-    {
-      id: 3,
-      playerName: 'Maxime',
-      photoSource: require('../assets/players/alexis.jpg'),
-      cards: cards.splice(0, 5)
-    },
-    {
-      id: 4,
-      playerName: 'Gael',
-      photoSource: require('../assets/players/gaelle.jpg'),
-      cards: cards.splice(0, 5)
-    },
-  ],
-  communityDecks: [
-    {
-      id: 0,
-      deckName: 'main',
-      cards: cards
-    },
-    {
-      id: 1,
-      deckName: 'main2',
-      cards: cards
-    },
-    {
-      id: 2,
-      deckName: 'main3',
-      cards: cards
-    },
-    {
-      id: 3,
-      deckName: 'main4',
-      cards: cards
-    },
-    {
-      id: 4,
-      deckName: 'main5',
-      cards: cards
-    },
-    {
-      id: 5,
-      deckName: 'dump',
-      cards: []
-    },
-  ],
-  selectedCards: [],
-  selectedPlayer: null
-};
+import CommunityDecksContainer from '../containers/CommunityDecksContainer';
 
 export default class GameScreen extends Component {
 
@@ -95,27 +26,7 @@ export default class GameScreen extends Component {
       <View style={styles.mainContainer}>
 
         <View style={styles.communityDecksContainer}>
-          <ScrollView
-            removeClippedSubviews={true}
-            scrollEventThrottle={16}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-          >
-          {
-            data.communityDecks.map(deck => {
-              return (
-                <View style={styles.center}>
-                  <CardDeck 
-                    {...deck} 
-                    faceUp={true} 
-                    key={deck.id}
-                  />
-                </View>
-              );
-            })
-          }
-
-          </ScrollView>
+          <CommunityDecksContainer />
         </View>
 
         <View style={styles.handContainer}>          
@@ -137,7 +48,6 @@ const styles = StyleSheet.create({
   },
   communityDecksContainer: {
     flex: 2,
-    // backgroundColor: '#ffffff',
   },
   center: {
     justifyContent: 'center',
@@ -153,6 +63,5 @@ const styles = StyleSheet.create({
   },
   playersContainer: {
     flex: 2,
-    // backgroundColor: '#cccccc'
   }
 });

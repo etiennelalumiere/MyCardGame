@@ -26,7 +26,7 @@ const Players = ({
       >
         {
           players.map(player => (
-            <View key={player.id} style={styles.playerContainer}>
+            <View key={player.playerId} style={styles.playerContainer}>
               {player.playerId === selectedPlayerId &&
                 <View style={styles.selectedArrow} />
               }
