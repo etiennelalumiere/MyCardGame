@@ -11,9 +11,8 @@ import { cards } from '../cards';
 import Card from './Card';
 import CardDeck from './CardDeck';
 import CardHand from './CardHand';
-import Players from './Players';
 import PlayersContainer from '../containers/PlayersContainer';
-import { addPlayer } from '../actions';
+import CardHandContainer from '../containers/CardHandContainer';
 
 const data = {
   players: [
@@ -120,12 +119,11 @@ export default class GameScreen extends Component {
         </View>
 
         <View style={styles.handContainer}>          
-          <CardHand cards={cards}/>
+          <CardHandContainer />
         </View>
 
         <View style={styles.playersContainer}>
           <PlayersContainer navigation={this.props.navigation} />
-          {/* <Players players={data.players}/> */}
         </View>
 
       </View>
@@ -152,7 +150,6 @@ const styles = StyleSheet.create({
   },
   handContainer: {
     flex: 3,
-    backgroundColor: '#ffa280'
   },
   playersContainer: {
     flex: 2,

@@ -7,19 +7,22 @@ import {
 import Card from './Card';
 
 const CardHand = ({
-  cards,
+  player,
   faceUp = true,
   onPressCard,
   onLongPressCard
 }) => {
   return (
-    <View style={styles.handContainer}>
+    <View style={[
+      styles.handContainer, 
+      (player) ? { backgroundColor: '#ffa280' } : {}
+    ]}>
       <FlatList
         removeClippedSubviews={true}
         scrollEventThrottle={16}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
-        data={cards}
+        data={player ? player.cards : []}
         keyExtractor={(card, index) => card.id.toString()}
         renderItem={({ item }) => {
           return (
@@ -35,7 +38,7 @@ const CardHand = ({
 
 const styles = StyleSheet.create({
   handContainer: {
-    flex: 1
+    flex: 1,
   },
   cardContainer: {
     justifyContent: 'center',

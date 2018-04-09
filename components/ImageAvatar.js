@@ -12,6 +12,7 @@ const ImageAvatar = ({
   onPress 
 }) => (
   <Avatar
+    onPress={onPress}
     radius={radius}
     child={<Image
       resizeMethod={'resize'}

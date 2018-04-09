@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './reducers';
 import { RootStack } from './RootStack';
-
-const store = createStore(rootReducer);
+import { store } from './store';
 
 export default class App extends Component {
   render() {

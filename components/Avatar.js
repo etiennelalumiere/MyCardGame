@@ -14,7 +14,11 @@ const resizeContainer = (radius) => {
   }
 };
 
-const Avatar = ({ radius, child, onPress }) => (
+const Avatar = ({ 
+  radius, 
+  child, 
+  onPress 
+}) => (
   <View style={[styles.buttonContainer, resizeContainer(radius)]}>
     <TouchableNativeFeedback
       onPress={onPress}

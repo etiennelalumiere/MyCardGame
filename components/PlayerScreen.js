@@ -121,10 +121,12 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: 160,
+    fontSize: 22,
     textAlign: 'center',
   },
   cameraIcon: {
     fontSize: 60,
+    color: 'darkgrey'
   },
   headerIcons: {
     margin: 5,

@@ -23,6 +23,11 @@ export const pressPlayer = (playerId) => ({
   playerId
 })
 
+export const selectPlayer = (playerId) => ({
+  type: 'SELECT_PLAYER',
+  playerId
+})
+
 
 //----------------------------------------------------------------
 // DECKS

@@ -12,6 +12,7 @@ import IconButton from './IconButton';
 
 const Players = ({
   players,
+  selectedPlayerId = -1,
   onPressPlayer,
   onPressAdd
 }) => {
@@ -26,12 +27,13 @@ const Players = ({
         {
           players.map(player => (
             <View key={player.id} style={styles.playerContainer}>
-              {player.selected &&
+              {player.playerId === selectedPlayerId &&
                 <View style={styles.selectedArrow} />
               }
               <PlayerAvatar
                 playerName={player.playerName}
                 photoSource={player.photoSource}
+                onPressImage={() => onPressPlayer(player.playerId)}
               />
             </View>
           ))
